@@ -1,9 +1,9 @@
-name: 抖音火山版
+name: 笑谱
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '*/1 * * * *'
+    - cron: '*/6 * * * *'
   watch:
     types: started
   repository_dispatch:
@@ -33,22 +33,10 @@ jobs:
           cd ~/Private-Script	
           git checkout master
           npm install
-      - name: '运行 【抖音火山版】'
+      - name: '运行 【笑谱】'
         run: |
           cd ~/TaskAction/workflow
-          node huoshan.js
+          node iboxpay.js
         env:
-          HSURL: ${{ secrets.HSURL }}
-          HSHEADER : ${{ secrets.HSHEADER }}
-          HSBODY : ${{ secrets.HSBODY }}
-          PLAYURL : ${{ secrets.PLAYURL }}
-          PLAYHEADER : ${{ secrets.PLAYHEADER }}
-          PLAYBODY : ${{ secrets.PLAYBODY }}
-          PUSH_KEY: ${{ secrets.PUSH_KEY }}
-          BARK_PUSH: ${{ secrets.BARK_PUSH }}
-          TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
-          TG_USER_ID: ${{ secrets.TG_USER_ID }}
-          BARK_SOUND: ${{ secrets.BARK_SOUND }}
-          DD_BOT_TOKEN: ${{ secrets.DD_BOT_TOKEN }}
-          DD_BOT_SECRET: ${{ secrets.DD_BOT_SECRET }}
-          IGOT_PUSH_KEY: ${{ secrets.IGOT_PUSH_KEY }}
+          iboxpayheader: ${{ secrets.iboxpayheader }}
+          refreshtoken : ${{ secrets.refreshtoken }}
