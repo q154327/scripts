@@ -3,7 +3,7 @@ name: 笑谱
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 0 * * *'
+    - cron: '50 7 * * *'
   watch:
     types: started
   repository_dispatch:
@@ -16,7 +16,7 @@ jobs:
     steps:
       - name: Checkout
         run: |	
-          git clone https://github.com/q154327/scripts/TaskAction.git ~/TaskAction
+          git clone https://github.com/q154327/scripts/TaskAction.git
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
