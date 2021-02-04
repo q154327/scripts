@@ -35,7 +35,6 @@ jobs:
           npm install
       - name: '运行 【笑谱】'
         run: |
-          cd ~/TaskAction/workflow
           node iboxpay.js
         env:
           iboxpayheader: ${{ secrets.iboxpayheader }}
