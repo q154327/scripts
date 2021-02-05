@@ -33,6 +33,7 @@ jobs:
           npm install
       - name: '运行 【笑谱】'
         run: |
+          cd ~/scripts
           node iboxpay.js
         env:
           iboxpayheader: ${{ secrets.iboxpayheader }}
